@@ -1,0 +1,37 @@
+name: Deploy DevOps Portfolio
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up SSH Key
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.EC2_SSH_KEY }}
+
+      - name: Add Remote Host to Known Hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Sync Files to EC2 via rsync
+        run: |
+          rsync -avz --exclude '.git' --exclude 'terra/.terraform/' ./ ec2-user@${{ secrets.EC2_HOST }}:/project/
+
+      - name: Execute Remote Deployment
+        run: |
+          ssh ec2-user@${{ secrets.EC2_HOST }} << 'EOF'
+            cd /project/terra
+            terraform init
+            terraform apply -auto-approve
+            # Add your Ansible or K3s deployment commands here, e.g.:
+            # ansible-playbook -i localhost playbook.yml
+            EOF
