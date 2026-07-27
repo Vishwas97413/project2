@@ -1,11 +1,20 @@
 cat << 'EOF' > .gitignore
 # Terraform local working directories
+<<<<<<< HEAD
 terra/
 *.tfstate
 *.tfstate.*
 crash.log
 *.tfvars
 .terraform.lock.hcl
+=======
+terra/.terraform/
+terra/*.tfstate
+terra/*.tfstate.*
+terra/crash.log
+terra/*.tfvars
+terra/.terraform.lock.hcl
+>>>>>>> 8cc8c42 (feat: complete end-to-end AWS DevOps pipeline with Terraform, Ansible, Docker, K3s, and GitHub Actions CI/CD)
 
 # OS files
 .DS_Store
