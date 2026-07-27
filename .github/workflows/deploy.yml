@@ -15,7 +15,7 @@ jobs:
       - name: Set up SSH Key
         uses: webfactory/ssh-agent@v0.9.0
         with:
-          ssh-private-key: ${{ secrets.EC2_SSH_KEY }}
+          ssh-private-key: ${{ fromBase64(secrets.EC2_SSH_KEY) }}
 
       - name: Add Remote Host to Known Hosts
         run: |
