@@ -32,6 +32,4 @@ jobs:
             cd /project/terra
             terraform init
             terraform apply -auto-approve
-            # Add your Ansible or K3s deployment commands here, e.g.:
-            # ansible-playbook -i localhost playbook.yml
-            EOF
+          EOF
