@@ -5,7 +5,7 @@ class SimpleHandler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header("Content-type", "text/html")
         self.end_headers()
-        self.wfile.write(b"<html><body><h1>Hello from DevOps CloudPulse App! Zero Downtime Ready.</h1></body></html>")
+        self.wfile.write(b"<html><body><h1>Hello from DevOps CloudPulse App! Zero Downtime Ready......</h1></body></html>")
 
 if __name__ == "__main__":
     server = HTTPServer(('0.0.0.0', 8080), SimpleHandler)
