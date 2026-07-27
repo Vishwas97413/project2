@@ -1,0 +1,13 @@
+cat << 'EOF' > .gitignore
+# Terraform local working directories
+terra/
+*.tfstate
+*.tfstate.*
+crash.log
+*.tfvars
+.terraform.lock.hcl
+
+# OS files
+.DS_Store
+*.pem
+EOF

@@ -1,0 +1,67 @@
+---
+- name: Install and Configure K3s Lightweight Kubernetes
+  hosts: localhost
+  connection: local
+  become: yes
+  tasks:
+    - name: Check if K3s is already installed
+      stat:
+        path: /usr/local/bin/k3s
+      register: k3s_binary
+
+    - name: Download and Install K3s
+      shell: curl -sfL https://get.k3s.io | sh -
+      when: not k3s_binary.stat.exists
+
+    - name: Ensure K3s service is started and enabled
+      systemd:
+        name: k3s
+        state: started
+        enabled: yes
+
+    - name: Create manifest directory on target
+      file:
+        path: /root/k8s
+        state: directory
+        mode: '0755'
+
+    - name: Copy Kubernetes Deployment Manifest
+      copy:
+        dest: /root/k8s/deployment.yml
+        content: |
+          apiVersion: apps/v1
+          kind: Deployment
+          metadata:
+            name: cloudpulse-deployment
+          spec:
+            replicas: 2
+            selector:
+              matchLabels:
+                app: cloud-app
+            template:
+              metadata:
+                labels:
+                  app: cloud-app
+              spec:
+                containers:
+                - name: cloudpulse-app
+                  image: cloud-app:latest
+                  imagePullPolicy: Never
+                  ports:
+                  - containerPort: 8080
+          ---
+          apiVersion: v1
+          kind: Service
+          metadata:
+            name: cloudpulse-service
+          spec:
+            type: NodePort
+            selector:
+              app: cloud-app
+            ports:
+              - port: 80
+                targetPort: 8080
+                nodePort: 30080
+
+    - name: Apply Kubernetes Deployment
+      shell: k3s kubectl apply -f /root/k8s/deployment.yml

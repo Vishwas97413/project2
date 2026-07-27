@@ -1,0 +1,10 @@
+version: "3.0"
+
+services:
+  web:
+    build: .
+    container_name: "cloud-compose-app"
+    ports:
+      - "80:8080"
+    restart: always
+
