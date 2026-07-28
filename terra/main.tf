@@ -39,3 +39,4 @@ resource "aws_security_group" "app-sg" {
 	      cidr_blocks = ["0.0.0.0/0"]
    }
 }
+
