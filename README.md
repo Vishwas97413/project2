@@ -412,61 +412,61 @@ Add screenshots here:
 
 ### AWS EC2 Instance
 
-![EC2 Instance](images/ec2.png)
+![EC2 Instance](https://github.com/Vishwas97413/project2/blob/main/Images/ec2.png)
 
 **Caption:** Amazon EC2 instance hosting the deployed application with public IP and IAM role configured.
 
 ### Terraform Infrastructure
 
-![Terraform](images/terra.png)
+![Terraform](https://github.com/Vishwas97413/project2/blob/main/Images/terra.png)
 
 **Caption:** Terraform validation and apply confirming infrastructure is successfully provisioned and up to date.
 
 ### Docker Deployment
 
-![Docker Containers](images/docker.png)
+![Docker Containers](https://github.com/Vishwas97413/project2/blob/main/Images/docker.png)
 
 **Caption:** Docker image and running container verifying successful application deployment using Docker.
 
 ### Kubernetes Deployment
 
-![Kubernetes](images/kubectl.png)
+![Kubernetes](https://github.com/Vishwas97413/project2/blob/main/Images/kubectl.png)
 
 **Caption:** Kubernetes deployment showing running pods, cluster node, and exposed NodePort service.
 
 ### GitHub Actions Workflow
 
-![GitHub Actions Workflow](images/actions-code.png)
+![GitHub Actions Workflow](https://github.com/Vishwas97413/project2/blob/main/Images/actions-code.png)
 
 **Caption:** GitHub Actions workflow automates deployment by syncing code to the EC2 instance and executing Terraform remotely.
 
 ### Successful CI/CD Pipeline
 
-![GitHub Actions Pipeline](images/actions-pipeline.png)
+![GitHub Actions Pipeline](https://github.com/Vishwas97413/project2/blob/main/Images/actions-pipeline.png)
 
 **Caption:** Successful GitHub Actions pipeline showing all deployment stages completed without errors.
 
 ### CloudWatch Alarm Triggered
 
-![CloudWatch Alarm](images/cw-alaram.png)
+![CloudWatch Alarm](https://github.com/Vishwas97413/project2/blob/main/Images/cw-alaram.png)
 
 **Caption:** Amazon CloudWatch alarm triggered when EC2 CPU utilization exceeded the configured threshold.
 
 ### CloudWatch Alarm Recovery
 
-![CloudWatch Healthy](images/cw-healthy.png)
+![CloudWatch Healthy](https://github.com/Vishwas97413/project2/blob/main/Images/cw-healthy.png)
 
 **Caption:** CloudWatch alarm automatically returned to the OK state after CPU utilization normalized.
 
 ### SNS Email Notification
 
-![SNS Email](images/sns-mail.png)
+![SNS Email](https://github.com/Vishwas97413/project2/blob/main/Images/sns-mail.png)
 
 **Caption:** Amazon SNS email subscription used for receiving CloudWatch alarm notifications.
 
 ### Application Deployment
 
-![Application Running](images/app.png)
+![Application Running](https://github.com/Vishwas97413/project2/blob/main/Images/app.png)
 
 **Caption:** CloudPulse application successfully deployed and accessible through the EC2 public IP.
 ---
