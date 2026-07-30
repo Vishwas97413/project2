@@ -410,15 +410,65 @@ These debugging experiences helped strengthen practical DevOps troubleshooting s
 
 Add screenshots here:
 
-- AWS EC2
-- Terraform Apply
-- Docker Container
-- Kubernetes Pods
-- GitHub Actions Pipeline
-- CloudWatch Alarm
-- SNS Email
-- Running Application
+### AWS EC2 Instance
 
+![EC2 Instance](images/ec2.png)
+
+**Caption:** Amazon EC2 instance hosting the deployed application with public IP and IAM role configured.
+
+### Terraform Infrastructure
+
+![Terraform](images/terra.png)
+
+**Caption:** Terraform validation and apply confirming infrastructure is successfully provisioned and up to date.
+
+### Docker Deployment
+
+![Docker Containers](images/docker.png)
+
+**Caption:** Docker image and running container verifying successful application deployment using Docker.
+
+### Kubernetes Deployment
+
+![Kubernetes](images/kubectl.png)
+
+**Caption:** Kubernetes deployment showing running pods, cluster node, and exposed NodePort service.
+
+### GitHub Actions Workflow
+
+![GitHub Actions Workflow](images/actions-code.png)
+
+**Caption:** GitHub Actions workflow automates deployment by syncing code to the EC2 instance and executing Terraform remotely.
+
+### Successful CI/CD Pipeline
+
+![GitHub Actions Pipeline](images/actions-pipeline.png)
+
+**Caption:** Successful GitHub Actions pipeline showing all deployment stages completed without errors.
+
+### CloudWatch Alarm Triggered
+
+![CloudWatch Alarm](images/cw-alaram.png)
+
+**Caption:** Amazon CloudWatch alarm triggered when EC2 CPU utilization exceeded the configured threshold.
+
+### CloudWatch Alarm Recovery
+
+![CloudWatch Healthy](images/cw-healthy.png)
+
+**Caption:** CloudWatch alarm automatically returned to the OK state after CPU utilization normalized.
+
+### SNS Email Notification
+
+![SNS Email](images/sns-mail.png)
+
+**Caption:** Amazon SNS email subscription used for receiving CloudWatch alarm notifications.
+
+### Application Deployment
+
+![Application Running](images/app.png)
+
+**Caption:** CloudPulse application successfully deployed and accessible through the EC2 public IP.
 ---
 
 ## Author
